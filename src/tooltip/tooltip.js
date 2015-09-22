@@ -162,6 +162,10 @@ angular.module('ui.bootstrap.tooltip', ['ui.bootstrap.position', 'ui.bootstrap.s
                   ttCss.height = ttBox.height + 'px';
 
                   ttCss.visibility = 'visible';
+                  $rootScope.$broadcast('popover-show', {
+                    tooltip: tooltip,
+                    ttCss: ttCss
+                  });
 
                   // Now set the calculated positioning and size.
                   tooltip.css(ttCss);
